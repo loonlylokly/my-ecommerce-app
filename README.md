@@ -50,7 +50,7 @@ pnpm run test
 ```
 
 Открываем [http://localhost:3000](http://localhost:3000) в своем браузере и видим результат.
-
+```bash
 Route (app)                              Size     First Load JS
 ┌ ○ /                                    137 B          87.3 kB
 ├ ○ /_not-found                          872 B            88 kB
@@ -71,4 +71,4 @@ Route (app)                              Size     First Load JS
 ○  (Static)   prerendered as static content
 ●  (SSG)      prerendered as static HTML (uses getStaticProps)
 ƒ  (Dynamic)  server-rendered on demand
-
+```
