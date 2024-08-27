@@ -1,3 +1,4 @@
+import { ModeToggle } from '@/features/themeToggle/ThemeToggle';
 import { ROUTES } from '@/shared/lib/constants/common';
 import { cn } from '@/shared/lib/helpers/cn';
 import { Button } from '@/shared/ui/Button';
@@ -15,6 +16,7 @@ export function Header() {
       <Button asChild>
         <Link href={ROUTES.cart}>Cart</Link>
       </Button>
+      <ModeToggle />
     </header>
   );
 }
