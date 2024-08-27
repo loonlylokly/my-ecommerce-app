@@ -1,6 +1,8 @@
 'use client';
 
 import { SORT_OPTIONS } from '@/shared/lib/constants/common';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { setSearch, setSort } from '@/shared/lib/store';
 import { Input } from '@/shared/ui/Input';
 import {
   Select,
@@ -14,12 +16,13 @@ import {
 import { FormEvent } from 'react';
 
 export const ProductFilter = () => {
+  const dispatch = useAppDispatch();
   const handleInputSearch = (e: FormEvent<HTMLInputElement>) => {
-    console.log(e.currentTarget.value);
+    dispatch(setSearch(e.currentTarget.value));
   };
 
   const handleChangeSort = (sort: string) => {
-    console.log(sort)
+    dispatch(setSort(sort));
   };
 
   return (

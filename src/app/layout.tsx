@@ -1,3 +1,5 @@
+import CartInitializer from '@/features/cartInitializer/CartInitializer';
+import { Providers } from '@/shared/lib/providers/providers';
 import { Header } from '@/widgets/header/Header';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -18,8 +20,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Header />
-        <main className='container mx-auto px-4 pt-20'>{children}</main>
+        <Providers>
+          <CartInitializer />
+          <Header />
+          <main className='container mx-auto px-4 pt-20'>{children}</main>
+        </Providers>
       </body>
     </html>
   );

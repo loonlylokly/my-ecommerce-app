@@ -1,6 +1,8 @@
 'use client';
 
 import { cn } from '@/shared/lib/helpers/cn';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { addToCart } from '@/shared/lib/store/slices/cartSlice';
 import { Product } from '@/shared/lib/types';
 import { Button } from '@/shared/ui/Button';
 import {
@@ -20,9 +22,11 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product, isShort = true }: ProductCardProps) => {
+  const dispatch = useAppDispatch();
+
   const handleAddToCart = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    console.log('add to basket');
+    dispatch(addToCart(product));
   };
 
   return (
